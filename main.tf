@@ -40,7 +40,7 @@ resource "aws_mq_broker" "rabbitmq" {
   storage_type       = "ebs"
   host_instance_type = var.host_instance_type
   security_groups    = [aws_security_group.rabbitmq.id]
-  subnet_ids         = var.deployment_mode == "SINGLE_INSTANCE" ? [var.subnet_ids[0]] : [var.subnet_ids]
+  subnet_ids         = var.deployment_mode == "SINGLE_INSTANCE" ? [var.subnet_ids[0]] : var.subnet_ids
   # for single instance we need only 1 subnet id
 
 #  configuration {
