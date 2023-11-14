@@ -6,6 +6,6 @@ data "aws_ssm_parameter" "RabbitMQ_PASS" {
   name = "${var.env}.rabbitmq.PASS"
 }
 
-data "aws_kms_key" "roboshop" {  // roboshop is a alias name given in key management service
+data "aws_kms_key" "roboshop" {
   key_id = "alias/roboshop"
 }
